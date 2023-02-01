@@ -33,4 +33,15 @@ const profile = () => {
             message: `Enter Email`
         }
     ])
+    .then(({name, role, id, email}) => {
+        let roleType = ``;
+        if (role === `Engineer`){
+            roleType = `Github User`
+        } else if (role === `Intern`) {
+            roleType = `School/University`
+        } else {
+            roleType = `Office Number`
+        }
+        
+    })
 }
