@@ -1,22 +1,36 @@
 const inquiry = require('inquirer');
-const fs = require('fs/promises')
+const fs = require('fs/promises');
+const { resolve } = require('path');
 
 const profile = () => {
     return inquiry.prompt([
         {
-            // manager name
+            //  name
             type: 'input',
             name: 'name ',
-            message: 'Manager Name: '
+            message: 'Name: '
         },
         {
-            // Manager
+            // Role
+            type: 'list',
+            name: `role`,
+            message: `Select team members role`,
+            choices:[
+                `Engineer`,
+                `Intern`,
+                `Manager`
+            ]
+
         },
         {
-            //Engineer
+            //Id
+            name: `id`,
+            message: `Enter Id number`
         },
         {
-            // Intern
+            // Email
+            name: `email`,
+            message: `Enter Email`
         }
     ])
 }
